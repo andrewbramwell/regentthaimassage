@@ -1,0 +1,495 @@
+---
+title: 'Pixel Perfect Websites | Code Stitch Web Designs | Denver, CO'
+description: 'Meta description for the page'
+preloadImg: '/assets/images/landing.jpg'
+permalink: '/'
+tags: 'sitemap' # Sitemap will use all pages in content/, due to content.json. As index.html is not included in content/ we need to manually add the sitemap tag to this page (only).
+eleventyNavigation:
+  key: Home
+  order: 100
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/local.css"/>
+    <link rel="stylesheet" href="/assets/css/critical.css"/>
+    <link rel="stylesheet" href="/assets/css/components.css"/>
+
+    <!-- Script for Netlify Identity -->
+    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script defer>
+        if (window.netlifyIdentity) {
+            window
+                .netlifyIdentity
+                .on('init', (user) => {
+                    if (!user) {
+                        window
+                            .netlifyIdentity
+                            .on('login', () => {
+                                document.location.href = '/admin/';
+                            });
+                    }
+                });
+        }
+    </script>
+
+    <!-- JSON Schema Markup -->
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "LocalBusiness",
+            "name": "{{ client.name }}",
+            {% if preloadImg %}"image": "{{ preloadImg }}",{% endif %}
+            {% if client.phoneFormatted %}"telephone": "{{ client.phoneFormatted }}",{% endif %}
+            {% if client.email %}"email": "{{ client.email }}",{% endif %}
+            {% if client.address %}
+                "address": {
+                    "@type": "PostalAddress"{% if client.address.lineOne %},
+                        "streetAddress": "{{ client.address.lineOne }}{% if client.address.lineTwo %}, {{ client.address.lineTwo }}{% endif %}"
+                    {% endif %}
+                    {% if client.address.city %},
+                        "addressLocality": "{{ client.address.city }}"
+                    {% endif %}
+                    {% if client.address.state %},
+                        "addressRegion": "{{ client.address.state }}"
+                    {% endif %}
+                    {% if client.address.zip %},
+                        "postalCode": "{{ client.address.zip }}"
+                    {% endif %}
+                    {% if client.address.country %},
+                        "addressCountry": "{{ client.address.country }}"
+                    {% endif %}
+                },
+            {% endif %}
+            {% if client.domain and page.url %}"url": "{{ client.domain }}{{ page.url }}",{% endif %}
+            {% if client.socials %}
+                "sameAs": [{% for platform, url in client.socials %}
+                        {% if not loop.first %},{% endif %}
+                        "{{ url }}"
+                    {% endfor %}]
+            {% endif %}
+        }
+    </script>
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
+
+<section id="hero-2151">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Perfect Photography at Your Doorstep</span>
+            <h2 class="cs-title">Your Wedding Memory will be More Memorable with Our Photography</h2>
+            <p class="cs-text">
+                Choose from our range of photobooth options, including open-air and enclosed booths, to suit your wedding theme and style.
+            </p>
+            <a href="" class="cs-button-solid">Book An Appointment</a>
+        </div>
+        <picture class="cs-background">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="/assets/images/hero-m.webp">
+            <!--Tablet and above Image-->
+            <source media="(min-width: 601px)" srcset="/assets/images/hero.webp">
+            <img loading="lazy" decoding="async" src="/assets/images/hero.jpg" alt="woman getting a massage" width="960" height="857">
+        </picture>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--               Why Choose Us                  -->
+<!-- ============================================ -->
+
+{% include 'components/why-choose-1631.html' %}
+
+<!-- ============================================ -->
+<!--            Side By Side Reverse              -->
+<!-- ============================================ -->
+
+<section id="sbs-r-869">
+    <div class="cs-container">
+        <div class="cs-image-group">
+            <!--Right Image-->
+            <picture class="cs-right-img">
+                <!--Mobile Image -->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/oil-massage-2.jpg" | resize({width: 284, height: 362}) | avif %}" type="image/avif">
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/oil-massage-2.jpg" | resize({width: 284, height: 362}) | webp %}" type="image/webp">
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/oil-massage-2.jpg" | resize({width: 284, height: 362}) | jpeg %}" type="image/jpeg">
+                <!--Tablet Image -->
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/oil-massage-2.jpg" | resize({width: 536, height: 684}) | avif %}" type="image/avif">
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/oil-massage-2.jpg" | resize({width: 536, height: 684}) | webp %}" type="image/webp">
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/oil-massage-2.jpg" | resize({width: 536, height: 684}) | jpeg %}" type="image/jpeg">
+                <!--Desktop Image -->
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/oil-massage-2.jpg" | resize({width: 878, height: 1120}) | avif %}" type="image/avif">
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/oil-massage-2.jpg" | resize({width: 878, height: 1120}) | webp %}" type="image/webp">
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/oil-massage-2.jpg" | resize({width: 878, height: 1120}) | jpeg %}" type="image/jpeg">
+                <img src="{% getUrl "/assets/images/oil-massage-2.jpg" | resize({width: 878, height: 1120}) | jpeg %}" alt="women getting a relaxing oil massage" width="439" height="560" loading="lazy" decoding="async">
+            </picture>
+            <!--Left Image-->
+            <picture class="cs-left-img">
+                <!--Mobile Image -->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/back-massage.jpg" | resize({width: 284, height: 362}) | avif %}" type="image/avif">
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/back-massage.jpg" | resize({width: 284, height: 362}) | webp %}" type="image/webp">
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/back-massage.jpg" | resize({width: 284, height: 362}) | jpeg %}" type="image/jpeg">
+                <!--Tablet Image -->
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/back-massage.jpg" | resize({width: 536, height: 684}) | avif %}" type="image/avif">
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/back-massage.jpg" | resize({width: 536, height: 684}) | webp %}" type="image/webp">
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/back-massage.jpg" | resize({width: 536, height: 684}) | jpeg %}" type="image/jpeg">
+                <!--Desktop Image -->
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/back-massage.jpg" | resize({width: 878, height: 1120}) | avif %}" type="image/avif">
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/back-massage.jpg" | resize({width: 878, height: 1120}) | webp %}" type="image/webp">
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/back-massage.jpg" | resize({width: 878, height: 1120}) | jpeg %}" type="image/jpeg">
+                <img src="{% getUrl "/assets/images/back-massage.jpg" | resize({width: 878, height: 1120}) | jpeg %}" alt=" back massage" width="439" height="560" loading="lazy" decoding="async">
+            </picture>
+        </div>
+        <div class="cs-content">
+            <span class="cs-topper">Our Treatment List</span>
+            <h2 class="cs-title">List of Condition We Treat in Our Center</h2>
+            <p class="cs-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab dolores minima similique incidunt quisquam neque rem quae fugiat, officia, id rerum deserunt? Recusandae sit praesentium vero itaque quas ullam illo, nobis quos repellat optio veritatis perferendis doloremque consequuntur assumenda.
+            </p>
+            <ul class="cs-ul">
+                <li class="cs-li">
+                    Deep Tissue Thai Massage
+                </li>
+                <li class="cs-li">
+                    Thai Foot Massage
+                </li>
+                <li class="cs-li">
+                    Traditional Thai Massage
+                </li>
+                <li class="cs-li">
+                    Hot Oil Thai Massage
+                </li>
+                <li class="cs-li">
+                    Sport Massage
+                </li>
+                <li class="cs-li">
+                    Back, Neck and Shoulders
+                </li>
+                <li class="cs-li">
+                    Maternity Massage
+                </li>
+                <li class="cs-li">
+                    Reiki
+                </li>
+                <li class="cs-li">
+                    Reiki and Massage Combination
+                </li>
+                <li class="cs-li">
+                    Facial Skincare Massage
+                </li>
+                <li class="cs-li">
+                    Facial Lymphatic and Collagen Boost
+                </li>
+                <li class="cs-li">
+                    Lymphatic Drainage Massage
+                </li>
+                <li class="cs-li">
+                    Body Scrub and Massage
+                </li>
+                <li class="cs-li">
+                    Massage and Cupping Combination
+                </li>
+            </ul>
+            <a href="/massages/" class="cs-button-solid">Massages</a>
+        </div>
+    </div>
+</section>
+                                
+
+<!-- ============================================ -->
+<!--                    Events                    -->
+<!-- ============================================ -->
+
+<section id="events-2423">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Community In Action</span>
+            <h2 class="cs-title">Join Us At Local Events</h2>
+            <p class="cs-text">
+                We love supporting our community! Look for us at local pet-friendly events, fairs, and markets where we share tips, meet fellow pet lovers, and help promote cleaner, healthier spaces for everyone.
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <a href="" class="cs-link">
+                    <picture class="cs-picture">
+                        <!--Mobile Image -->
+                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/event-1.jpg" | resize({width: 576, height: 1048}) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/event-1.jpg" | resize({width: 576, height: 1048}) | webp %}" type="image/webp">
+                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/event-1.jpg" | resize({width: 576, height: 1048}) | jpeg %}" type="image/jpeg">
+                        <!--Tablet Image -->
+                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/event-1.jpg" | resize({width: 1496, height: 832}) | avif %}" type="image/avif">
+                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/event-1.jpg" | resize({width: 1496, height: 832}) | webp %}" type="image/webp">
+                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/event-1.jpg" | resize({width: 1496, height: 832}) | jpeg %}" type="image/jpeg">
+                        <!--Desktop Image -->
+                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/event-1.jpg" | resize({width: 1048, height: 1070}) | avif %}" type="image/avif">
+                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/event-1.jpg" | resize({width: 1048, height: 1070}) | webp %}" type="image/webp">
+                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/event-1.jpg" | resize({width: 1048, height: 1070}) | jpeg %}" type="image/jpeg">
+                        <img src="{% getUrl "/assets/images/event-1.jpg" | resize({width: 1048, height: 1070}) | jpeg %}" alt="event 1" width="524" height="535" loading="lazy" decoding="async" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">Thai Massage Basics</h3>
+                    <div class="cs-flex">
+                        <div class="cs-calender">
+                            <span class="cs-month">Dec</span>
+                            <span class="cs-date">25</span>
+                            <span class="cs-day">Mon</span>
+                        </div>
+                        <div class="cs-text-group">
+                            <div class="cs-time">
+                                <span class="cs-time-text">05:00 PM</span>
+                            </div>
+                            <div class="cs-info">
+                                <span class="cs-text-large">
+                                    Aaron Hill Farm
+                                </span>
+                                <span class="cs-text-item">
+                                    Hebden Bridge, HX7 5TX
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a href="" class="cs-link">
+                    <picture class="cs-picture">
+                        <!--Mobile Image -->
+                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/event-2.jpg" | resize({width: 576, height: 1048}) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/event-2.jpg" | resize({width: 576, height: 1048}) | webp %}" type="image/webp">
+                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/event-2.jpg" | resize({width: 576, height: 1048}) | jpeg %}" type="image/jpeg">
+                        <!--Tablet Image -->
+                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/event-2.jpg" | resize({width: 1496, height: 832}) | avif %}" type="image/avif">
+                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/event-2.jpg" | resize({width: 1496, height: 832}) | webp %}" type="image/webp">
+                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/event-2.jpg" | resize({width: 1496, height: 832}) | jpeg %}" type="image/jpeg">
+                        <!--Desktop Image -->
+                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/event-2.jpg" | resize({width: 1048, height: 1070}) | avif %}" type="image/avif">
+                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/event-2.jpg" | resize({width: 1048, height: 1070}) | webp %}" type="image/webp">
+                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/event-2.jpg" | resize({width: 1048, height: 1070}) | jpeg %}" type="image/jpeg">
+                        <img src="{% getUrl "/assets/images/event-2.jpg" | resize({width: 1048, height: 1070}) | jpeg %}" alt="event 2" width="524" height="535" loading="lazy" decoding="async" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">Thai Massage Basics</h3>
+                    <div class="cs-flex">
+                        <div class="cs-calender">
+                            <span class="cs-month">Dec</span>
+                            <span class="cs-date">25</span>
+                            <span class="cs-day">Mon</span>
+                        </div>
+                        <div class="cs-text-group">
+                            <div class="cs-time">
+                                <span class="cs-time-text">05:00 PM</span>
+                            </div>
+                            <div class="cs-info">
+                                <span class="cs-text-large">
+                                    Aaron Hill Farm
+                                </span>
+                                <span class="cs-text-item">
+                                    Hebden Bridge, HX7 5TX
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <a href="/events/" class="cs-button-solid">View All Events</a>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                   Reviews                    -->
+<!-- ============================================ -->
+
+
+<section id="reviews-727">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Testimonials</span>
+            <h2 class="cs-title">Why Clients Love Nutcha Thai Massage</h2>
+            <p class="cs-text">
+                Discover why clients choose Nutcha Thai Massage for authentic treatments, professional service, and exceptional therapeutic results.
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <svg class="cs-icon" viewBox="0 0 40 33" width="40" height="33" aria-hidden="true">
+                    <g clip-path="url(#clip0_1_30)">
+                        <path d="M9.17589 33H0L7.32198 0H22L9.17589 33Z"/>
+                        <path d="M27.1759 33H18L25.322 0H40L27.1759 33Z"/>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_1_30">
+                            <rect width="40" height="33" fill="white"/>
+                        </clipPath>
+                    </defs>
+                </svg>
+                <h3 class="cs-h3">OMG!</h3>
+                <p class="cs-item-text">
+                    Wow omg. I have been suffering with shoulder pain for the past 2 weeks. Was googling all places and this one had amazing reviews and now I know why. I had a deep tissue massage back neck & shoulder Thank you so much. I will be coming again for a full massage. Would recommend you guys. 👏🏼
+                </p>
+                <span class="cs-name">Saliam</span>
+             </li>
+             <li class="cs-item">
+                <svg class="cs-icon" viewBox="0 0 40 33" width="40" height="33" aria-hidden="true">
+                    <g clip-path="url(#clip0_1_30)">
+                        <path d="M9.17589 33H0L7.32198 0H22L9.17589 33Z"/>
+                        <path d="M27.1759 33H18L25.322 0H40L27.1759 33Z"/>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_1_30">
+                            <rect width="40" height="33" fill="white"/>
+                        </clipPath>
+                    </defs>
+                </svg>
+                <h3 class="cs-h3">Incredible Experience!</h3>
+                <p class="cs-item-text">
+                    I've tried many deep tissue massages before, but none have come close to the incredible experience I had at Nutcha Thai Massage. I left feeling incredibly relaxed, rejuvenated, and pain-free. I highly recommend Nutcha Thai Massage to anyone seeking a truly transformative massage experience.
+                </p>
+                <span class="cs-name">John</span>
+             </li>
+        </ul>
+    </div>
+    <!-- Background Image-->
+    <picture class="cs-picture">
+        <source media="(max-width: 600px)" srcset="/assets/images/reviews-m.webp">
+        <source media="(min-width: 601px)" srcset="/assets/images/reviews.webp">
+        <img loading="lazy" decoding="async" src="/assets/images/reviews.jpg" alt="lady receiving a massage" width="1920" height="1280" aria-hidden="true">
+    </picture>
+</section>     
+                                
+<!-- ============================================ -->
+<!--                     FAQ                      -->
+<!-- ============================================ -->
+
+<section id="faq-351">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Asked questions</span>
+            <h2 class="cs-title">Frequently Asked Questions</h2>
+        </div>
+        <ul class="cs-faq-group">
+            <!-- Active class added as default -->
+            <li class="cs-faq-item active">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        How much are house cleaning services?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                    Some 
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        What is your plan cancellation policy?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam. 
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        How long should a house cleaning take?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam. 
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        How much are house cleaning services?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam. 
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        Can cleanings be scheduled?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam. 
+                </p>
+            </li>
+        </ul>
+        <!--Added second UL, this allows you to open an FAQ item on each side without messing up the flexbox for the other -->
+        <ul class="cs-faq-group">
+            <li class="cs-faq-item">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        How much are house cleaning services?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                    Some cleaning plans require a minimum commitment term. Cancelling your plan before the minimum term is complete will result in a $99 fee. If you want to learn more information about how to cancel, please inbox us.
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        What is your plan cancellation policy?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam. 
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        How long should a house cleaning take?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam. 
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        How much are house cleaning services?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam. 
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        Can cleanings be scheduled?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam. 
+                </p>
+            </li>
+        </ul>
+    </div>
+</section>
+                                
+                                
+     
+                                
+<script>const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
+    for (const item of faqItems) {
+        const onClick = () => {
+        item.classList.toggle('active')
+    }
+    item.addEventListener('click', onClick)
+    }
+</script>
+
+{% endblock %}
