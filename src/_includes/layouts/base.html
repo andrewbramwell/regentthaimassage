@@ -29,8 +29,8 @@
 
         <!-- Preloads -->
         <link rel="preload" as="image" href="/assets/svgs/logo-white.svg">
-        <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-regular.woff2" crossorigin>
-        <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-700.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/jost-v20-latin-regular.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/marcellus-v14-latin-regular.woff2" crossorigin>
 
         <!-- Preload an image - tag not rendered if preloadImg is blank to stop console errors -->
         {% if preloadImg != '' %}
@@ -49,7 +49,7 @@
     </head>
     <body>
         <!--Screen reader skip main nav-->
-        <a class="skip" aria-label="skip to main content" href="#main" tabindex="1">Click To Skip To Main Content</a>
+        <a class="skip" aria-label="skip to main content" href="#main" tabindex="0">Click To Skip To Main Content</a>
 
         {% include "components/header.html" %}
 
@@ -71,13 +71,13 @@
         <div id="popup-2064">
             <div class="cs-container">
                 <button class="cs-close">
-                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/cookie-close.svg" alt="close" width="16" height="16">
+                    <img loading="lazy" decoding="async" src="/assets/svgs/cookie-close.svg" alt="close" width="16" height="16">
                 </button>
                 <div class="cs-content">
                     <div class="cs-flex">
                         <h3 class="cs-h3">This website uses cookies</h3>
                         <p class="cs-text">
-                            This website uses cookies. By using our website you consent to all cookies in accordance with our Cookie Policy. <a class="cs-link" href="/cookie-policy/">Read More</a>
+                            This website uses cookies. By using our website you consent to all cookies in accordance with our Cookie Policy. <a class="cs-link" aria-label="cookies policy" href="/cookie-policy/">Read More</a>
                         </p>
                     </div>
                     <button class="cs-button-solid cs-accept">Accept</button>

@@ -1,7 +1,8 @@
 ---
-title: 'About | Code Stitch Web Designs'
-description: 'Meta description for the page'
+title: 'About | Regent Thai Massage & Spa'
+description: 'About Regent Thai Massage & Spa in Cheltenham. Founded by experienced Thai therapist Runa in 2024, offering authentic treatments with qualified staff.'
 permalink: 'about/'
+preloadImg: '/assets/images/banner.webp'
 eleventyNavigation:
     key: About Us
     order: 200
@@ -11,7 +12,6 @@ eleventyNavigation:
 
 {% block head %}
     <link rel="stylesheet" href="/assets/css/about.css">
-    <link rel="preload" as="image" href="{% getUrl "/assets/images/banner.jpg" | resize({width: 2560, height: 1136}) | avif %}">
 {% endblock %}
 
 {% block body %}
