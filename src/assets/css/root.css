@@ -4,7 +4,7 @@
 @media only screen and (min-width: 0rem) {
   :root {
     --primary: #C4AB69;
-    --primaryLight: #9d8954;
+    --primaryLight: #C4AB69;
     --secondary: #46383E;
     --secondaryLight: #001f3f;
     --headerColor: #1a1a1a;
@@ -1141,6 +1141,108 @@ html {
   }
 }
 /*-- -------------------------- -->
+<---          Banner            -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #banner-310 {
+    /* 144px - 252px */
+    padding-top: clamp(9rem, 25vw, 15.75rem);
+    /* 80px - 140px */
+    padding-bottom: clamp(5rem, 13vw, 8.75rem);
+    position: relative;
+    z-index: 1;
+  }
+  #banner-310 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #banner-310 .cs-int-title {
+    /* 39px - 49px */
+    font-size: clamp(2.4375rem, 4.5vw, 3.0625rem);
+    font-weight: 900;
+    line-height: 1.2em;
+    text-align: center;
+    max-width: 43.75rem;
+    margin: 0 auto 0.75rem;
+    color: var(--bodyTextColorWhite);
+    position: relative;
+    font-family: Marcellus;
+  }
+  #banner-310 .cs-breadcrumbs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #banner-310 .cs-link {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.2em;
+    text-decoration: none;
+    color: var(--bodyTextColorWhite);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #banner-310 .cs-link:last-of-type {
+    /* remove the chevron on the last list item */
+  }
+  #banner-310 .cs-link:last-of-type::after {
+    display: none;
+  }
+  #banner-310 .cs-link:after {
+    /* chevron - added as pseudo to make adding and removing them easier */
+    content: "";
+    width: 0.4375rem;
+    height: 0.75rem;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+    background: url("/assets/svgs/chevron-right.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  #banner-310 .cs-link.cs-active {
+    color: var(--primary);
+  }
+  #banner-310 .cs-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    z-index: -1;
+  }
+  #banner-310 .cs-background:before {
+    /* black overlay box */
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #1a1418;
+    opacity: 0.7;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  #banner-310 .cs-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+/*-- -------------------------- -->
 <---   Interior Page Header     -->
 <--- -------------------------- -*/
 /* Mobile */
@@ -1197,7 +1299,7 @@ html {
     top: 0;
     left: 0;
     content: "";
-    opacity: 0.7;
+    opacity: 0.5;
     display: block;
     background: #1a1418;
     height: 100%;
@@ -1283,7 +1385,7 @@ html {
     height: 100%;
     width: 100%;
     background: #1a1418;
-    opacity: 0.8;
+    opacity: 0.7;
     top: 0;
     left: 0;
     z-index: 1;
