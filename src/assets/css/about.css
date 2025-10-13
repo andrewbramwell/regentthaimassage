@@ -164,7 +164,8 @@ body.dark-mode #quote-827 .cs-quote-icon {
   #meet-team-859 {
     padding: var(--sectionPadding);
     overflow: hidden;
-    background-color: var(--sectionColor);
+    position: relative;
+    padding-top: 0;
   }
   #meet-team-859 .cs-container {
     width: 100%;
@@ -253,7 +254,7 @@ body.dark-mode #quote-827 .cs-quote-icon {
     padding: 1rem;
     /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: #f7f7f7;
     border-radius: 0.75rem;
     display: flex;
     flex-direction: column;

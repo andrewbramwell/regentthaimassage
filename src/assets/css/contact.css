@@ -6,7 +6,6 @@
   #contact-1403 {
     padding: var(--sectionPadding);
     padding-bottom: 0;
-    background-color: var(--sectionColor);
     position: relative;
     z-index: 10;
   }
@@ -120,7 +119,7 @@
     padding: clamp(1.5rem, 5.18vw, 3rem) clamp(1rem, 4vw, 3rem);
     /* prevents flexbox from affecting height and width */
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: #f7f7f7;
     border-radius: 1rem;
     display: flex;
     justify-content: space-between;
@@ -154,7 +153,7 @@
     padding: 0;
     padding-left: 1.5rem;
     color: var(--headerColor);
-    background-color: var(--sectionColor);
+    background-color: #fff;
     border-radius: 0.5rem;
     border: none;
     /* prevents padding from adding to height and width */

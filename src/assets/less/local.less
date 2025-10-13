@@ -6,6 +6,29 @@
 @media only screen and (min-width: 0rem) {
     #services-877 {
         padding: var(--sectionPadding);
+        background-color: #f7f7f7;
+        position: relative;
+        z-index: 1;
+
+        &:before {
+            /* textured pattern */
+            content: "";
+            position: absolute;
+            display: block;
+            height: 100%;
+            width: 100%;
+            /* changes to a desktop image at tablet */
+            background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/splatter-bg-m.png");
+            background-size: auto;
+            background-position: center;
+            background-repeat: repeat;
+            opacity: 1;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            /* prevents the mouse from interacting with itand also in dev tool mode */
+            pointer-events: none;
+        }
 
         .cs-container {
             width: 100%;
@@ -166,6 +189,7 @@
 @media only screen and (min-width: 0rem) {
     body.dark-mode {
         #services-877 {
+            background-color: rgba(0, 0, 0, 0.2);
             .cs-topper {
                 color: var(--primaryLight);
             }
@@ -188,6 +212,10 @@
                     opacity: 0.3;
                 }
             }
+
+            &:before {
+                opacity: .1;
+            }
         }
     }
 }
@@ -202,7 +230,7 @@
         padding: var(--sectionPadding);
         /* clips overlapping cs-image-group */
         overflow: hidden;
-        background-color: var(--sectionColor);
+        
 
         .cs-container {
             width: 100%;
@@ -284,7 +312,7 @@
                 content: "";
                 width: (299/16em);
                 height: (234/16em);
-                background: #90888b;
+                background: #acb1bf;
                 border-radius: 0 (100/16em) 0 (100/16em);
                 opacity: 1;
                 position: absolute;
@@ -490,8 +518,8 @@
                 display: block;
                 height: 100%;
                 width: 100%;
-                background: #1a1418;
-                opacity: 0.7;
+                background: #353b4c;
+                opacity: 0.9;
                 top: 0;
                 left: 0;
                 z-index: 1;
@@ -587,7 +615,6 @@
 @media only screen and (min-width: 0rem) {
     #gallery-402 {
         padding: var(--sectionPadding);
-        background-color: var(--sectionColor);
 
         .cs-container {
             width: 100%;
@@ -696,6 +723,10 @@
             .cs-text {
                 opacity: 0.8;
             }
+
+            &:before {
+                opacity: .1;
+            }
         }
     }
 }
@@ -708,6 +739,29 @@
 @media only screen and (min-width: 0rem) {
     #reviews-567 {
         padding: var(--sectionPadding);
+        background-color: #f7f7f7;
+        position: relative;
+        z-index: 1;
+
+        &:before {
+            /* textured pattern */
+            content: "";
+            position: absolute;
+            display: block;
+            height: 100%;
+            width: 100%;
+            /* changes to a desktop image at tablet */
+            background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/splatter-bg-m.png");
+            background-size: auto;
+            background-position: center;
+            background-repeat: repeat;
+            opacity: 1;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            /* prevents the mouse from interacting with itand also in dev tool mode */
+            pointer-events: none;
+        }
 
         .cs-container {
             width: 100%;
@@ -751,8 +805,9 @@
             /* 32px - 60px top & bottom */
             /* 16px - 48px left & right */
             padding: clamp(2rem, 6.15vw, 3.75rem) clamp(1rem, 4.15vw, 3rem);
-            background-color: var(--sectionColor);
+            background-color: #fff;
             border-radius: 1em;
+            border: 1px solid #e8e8e8;
             /* prevents padding from adding to height and width */
             box-sizing: border-box;
             display: flex;
@@ -871,6 +926,7 @@
 @media only screen and (min-width: 0rem) {
     body.dark-mode {
         #reviews-567 {
+            background-color: rgba(0, 0, 0, 0.2);
             .cs-topper {
                 color: var(--primaryLight);
             }
@@ -889,6 +945,10 @@
             .cs-item {
                 background-color: var(--accent);
             }
+
+            &:before {
+                opacity: .1;
+            }
         }
     }
 }
@@ -902,8 +962,8 @@
 @media only screen and (min-width: 0rem) {
     #faq-853 {
         padding: var(--sectionPadding);
-        background-color: var(--sectionColor);
         position: relative;
+        z-index: 1;
 
         .cs-container {
             width: 100%;
@@ -1133,6 +1193,10 @@
                 &:after {
                     background-color: var(--bodyTextColorWhite);
                 }
+            }
+
+            &:before {
+                opacity: .1;
             }
         }
     }

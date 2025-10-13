@@ -78,24 +78,27 @@ eleventyNavigation:
 <!--                    Hero                      -->
 <!-- ============================================ -->
 
-<section id="hero-1159">
+<section id="hero-2151">
     <div class="cs-container">
         <div class="cs-content">
             <span class="cs-topper">Regent Thai Massage & Spa</span>
-            <h1 class="cs-title">Authentic Thai Massage in Cheltenham</h1>
+            <h2 class="cs-title">Authentic Thai Massage in Cheltenham</h2>
             <p class="cs-text">
                 Escape the everyday at Regent Thai Massage & Spa. Conveniently located in Cheltenham town centre, we offer traditional Thai massage, aromatherapy, and therapeutic treatments delivered by qualified professionals. Experience genuine healing and lasting relief.
             </p>
             <a href="{{client.onlineBooking}}" target="_blank" rel="noopener" class="cs-button-solid">Book An Appointment</a>
+            <img class="cs-graphic" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/leaf5.png" alt="graphic" width="280" height="350" aria-hidden="true">
         </div>
+        <picture class="cs-background">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="/assets/images/hero-1.webp">
+            <!--Tablet and above Image-->
+            <source media="(min-width: 601px)" srcset="/assets/images/hero-1.webp">
+            <img loading="lazy" decoding="async" src="/assets/images/hero-1.jpg" alt="icon" width="960" height="857">
+        </picture>
     </div>
-    <!-- Background Image, also BG Image is set in CSS at 1600px wide for parallax effect -->
-    <picture class="cs-background">
-        <source media="(max-width: 600px)" srcset="/assets/images/hero-1-m.webp">
-        <source media="(min-width: 601px)" srcset="/assets/images/hero-1.webp">
-        <img decoding="async" src="/assets/images/hero-1.jpg" alt="blonde hair woman getting a massage" width="2250" height="1500" aria-hidden="true">
-    </picture>
 </section>
+                                
 
 <!-- ============================================ -->
 <!--                  Services                    -->
