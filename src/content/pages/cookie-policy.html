@@ -74,7 +74,9 @@ eleventyNavigation:
             <h2>Contact Us</h2>
             <p>If you have any questions about our use of cookies, please contact us:</p>
             <p><strong>{{client.name}}</strong><br>
-            Cheltenham, UK<br>
+            {{client.address.lineOne}},<br>
+            {{client.address.lineTwo}},<br>
+            {{client.address.city}} {{client.address.zip}}<br>
             {{client.phoneFormatted}}<br>
             {{client.email}}</p>
 

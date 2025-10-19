@@ -6,7 +6,7 @@ module.exports = {
     "openingHours": "Mon-Sat: 10am-8pm, Sun: 11am-7pm",
     "onlineBooking": "https://regentthaimassagespa.setmore.com/",
     "address": {
-        "lineOne": "3 Ormond Terrace",
+        "lineOne": "3, Ormond Terrace",
         "lineTwo": "Regent St",
         "city": "Cheltenham",
         "state": "",

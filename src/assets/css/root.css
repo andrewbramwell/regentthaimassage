@@ -6,7 +6,7 @@
     --primary: #C4AB69;
     --primaryLight: #C4AB69;
     --secondary: #59637E;
-    --secondaryLight: #001f3f;
+    --secondaryLight: #59637E;
     --headerColor: #353b4c;
     --bodyTextColor: #4e4b66;
     --bodyTextColorWhite: #fafbfc;
@@ -104,7 +104,7 @@
     margin: 0;
     overflow-x: hidden;
     padding: 0;
-    font-family: "Jost", Arial, sans-serif;
+    font-family: "DM sans", Arial, sans-serif;
     font-size: 100%;
     color: var(--bodyTextColor);
   }
@@ -155,25 +155,34 @@
     left: 0;
     opacity: 0;
   }
-  /* cormorant-garamond-regular - latin */
-  /* jost-regular - latin */
+  /* dm-sans-regular - latin */
   @font-face {
     font-display: swap;
     /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Jost';
+    font-family: 'DM Sans';
     font-style: normal;
     font-weight: 400;
-    src: url('/assets/fonts/jost-v20-latin-regular.woff2') format('woff2');
+    src: url('/assets/fonts/dm-sans-v17-latin-regular.woff2') format('woff2');
     /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
-  /* jost-600 - latin */
+  /* dm-sans-600 - latin */
   @font-face {
     font-display: swap;
     /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Jost';
+    font-family: 'DM Sans';
     font-style: normal;
     font-weight: 600;
-    src: url('/assets/fonts/jost-v20-latin-600.woff2') format('woff2');
+    src: url('/assets/fonts/dm-sans-v17-latin-600.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* dm-sans-700 - latin */
+  @font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/assets/fonts/dm-sans-v17-latin-700.woff2') format('woff2');
     /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
   /* marcellus-regular - latin */
@@ -1097,19 +1106,19 @@
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  #banner-1448 {
+  #banner-1881 {
     padding: var(--sectionPadding);
-    /* 200px - 350px */
-    padding-top: clamp(12.5rem, 30vw, 21.875rem);
-    /* changes to 100px at tablet */
-    padding-bottom: 0;
-    background-color: #f7f7f7;
+    /* 180px - 242px */
+    padding-top: clamp(14.625rem, 27vw, 19.6625rem);
+    /* 60px - 182px */
+    padding-bottom: clamp(3.75rem, 14vw, 11.375rem);
     /* clips the line from causing overflow issues for going off screen */
     overflow: hidden;
     position: relative;
+    background-color: #f7f7f7;
     z-index: 1;
   }
-  #banner-1448:before {
+  #banner-1881:before {
     /* textured pattern */
     content: "";
     position: absolute;
@@ -1117,7 +1126,7 @@
     height: 100%;
     width: 100%;
     /* changes to a desktop image at tablet */
-    background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/splatter-bg-m.png");
+    background: url("/assets/images/splatter-bg-m.png");
     background-size: auto;
     background-position: center;
     background-repeat: repeat;
@@ -1128,27 +1137,18 @@
     /* prevents the mouse from interacting with itand also in dev tool mode */
     pointer-events: none;
   }
-  #banner-1448 .cs-container {
+  #banner-1881 .cs-container {
     text-align: center;
     width: 100%;
     max-width: 80rem;
     margin: auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 3rem;
-    position: relative;
-    z-index: 1;
-  }
-  #banner-1448 .cs-content {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.75rem;
   }
-  #banner-1448 .cs-int-title {
+  #banner-1881 .cs-int-title {
     /* 39px - 61px */
     font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
     font-weight: 900;
@@ -1157,131 +1157,67 @@
     margin: 0;
     color: var(--headerColor);
     position: relative;
-    font-family: marcellus;
+    font-family: Marcellus;
   }
-  #banner-1448 .cs-breadcrumbs {
+  #banner-1881 .cs-breadcrumbs {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  #banner-1448 .cs-link {
+  #banner-1881 .cs-link {
     font-size: 1rem;
     line-height: 1.2em;
     text-decoration: none;
-    color: var(--bodyTextColor);
-    position: relative;
+    color: var(--primary);
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
   }
-  #banner-1448 .cs-link:last-of-type {
+  #banner-1881 .cs-link:last-of-type {
     /* remove the chevron on the last list item */
   }
-  #banner-1448 .cs-link:last-of-type::after {
+  #banner-1881 .cs-link:last-of-type::after {
     display: none;
   }
-  #banner-1448 .cs-link:after {
+  #banner-1881 .cs-link:after {
     /* chevron */
-    content: '';
+    content: "";
     width: 0.4375rem;
     height: 0.75rem;
     margin: 0 1rem;
-    background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/grey-chev.svg");
-    background-size: contain;
+    background: url("/assets/svgs/grey-chevron.svg");
     background-position: center;
+    background-size: contain;
     background-repeat: no-repeat;
-    position: relative;
     display: block;
-  }
-  #banner-1448 .cs-link.cs-active {
-    color: var(--primary);
-  }
-  #banner-1448 .cs-picture {
-    /* we set everything inside of the cs-picture in ems, not rems, so we can use the font size minmax to scale it down.  We use the desktop width and height values and position the elements relative to those dimensions of it. We can then set a max height on the img tag that is the same height as the cs-picture, scale down the cs-picture group with the font size minmax to shrink for mobile, and let it grow until it reaches its final size at desktop.  By doing this it allows us to set the img tag to always try to fill the width of the cs-picture 100%, but can be no taller than 362px, and object fit contain makes sure the image is contained within the dimensions of the parent. Then we center the image with flexbox and its done.  You can swap in any PNG cut out you want and it will fit within the dimensions of the box we defined on the cs-picture. Now our code is TRUELY responsive because our code responds not only to the size of the screen, but also the size of the image you replace our default one with */
-    font-size: min(2.2vw, 1em);
-    width: 42em;
-    height: 22.625em;
-    overflow: hidden;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
     position: relative;
-    z-index: 1;
   }
-  #banner-1448 .cs-picture:before {
-    content: '';
-    width: 42em;
-    height: 42em;
-    border-radius: 50%;
-    background: var(--secondary);
-    opacity: 1;
-    position: absolute;
-    display: block;
-    top: 1.25em;
-    left: 50%;
-    z-index: -1;
-    transform: translateX(-50%);
+  #banner-1881 .cs-link.cs-active {
+    color: var(--bodyTextColor);
   }
-  #banner-1448 .cs-picture img {
-    width: 100%;
+  #banner-1881 .cs-graphic {
+    /* 123px - 227px */
+    width: clamp(7.71rem, 22.5vw, 14.19rem);
     height: auto;
-    max-height: 22.625em;
-    object-fit: contain;
-  }
-}
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-  #banner-1448 {
-    padding-bottom: 6.25rem;
-  }
-  #banner-1448 .cs-container {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    position: initial;
-  }
-  #banner-1448 .cs-content {
-    text-align: left;
-    width: 40%;
-    align-items: flex-start;
-  }
-  #banner-1448 .cs-picture {
-    font-size: min(1.3vw, 1em);
     position: absolute;
-    bottom: 0;
-    right: 0;
-  }
-}
-/* Large Desktop - 1300px */
-@media only screen and (min-width: 81.25rem) {
-  #banner-1448 .cs-picture {
-    margin-left: -1.875rem;
-    left: 50%;
-    right: auto;
+    top: clamp(5rem, 10vw, 8rem);
+    /* Responsive positioning */
+    right: -2rem;
+    z-index: -1;
   }
 }
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
-  body.dark-mode #banner-1448 {
-    background-color: rgba(0, 0, 0, 0.4);
+  body.dark-mode #banner-1881 {
+    background-color: rgba(0, 0, 0, 0.2);
   }
-  body.dark-mode #banner-1448:before {
-    opacity: 0.1;
-  }
-  body.dark-mode #banner-1448 .cs-int-title,
-  body.dark-mode #banner-1448 .cs-link {
+  body.dark-mode #banner-1881 .cs-int-title,
+  body.dark-mode #banner-1881 .cs-link {
     color: var(--bodyTextColorWhite);
   }
-  body.dark-mode #banner-1448 .cs-link {
-    opacity: 0.8;
-  }
-  body.dark-mode #banner-1448 .cs-link.cs-active {
-    color: var(--primary);
-    opacity: 1;
-  }
-  body.dark-mode #banner-1448 .cs-picture:before {
-    background-color: var(--dark);
-    filter: brightness(40%);
+  body.dark-mode #banner-1881:before {
+    opacity: 0.1;
   }
 }
 /*-- -------------------------- -->
@@ -1306,7 +1242,7 @@
     height: 100%;
     width: 100%;
     /* changes to a desktop image at tablet */
-    background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/splatter-bg-m.png");
+    background: url("/assets/images/splatter-bg-m.png");
     background-size: auto;
     background-position: center;
     background-repeat: repeat;
